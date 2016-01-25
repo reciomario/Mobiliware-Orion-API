@@ -25,5 +25,5 @@ public interface Constants {
 	 //MOBILIWARE API URLs
 	 public static final String TAXI_STATE_AVAILABLE = "AVAILABLE";
 	 public static final String TAXI_STATE_OCCUPIED = "OCCUPIED";
-	 public static final String TAXI_STATE_OUTOFSERVICE = "OUTOFSERVICE1";
+	 public static final String TAXI_STATE_OUTOFSERVICE = "OUTOFSERVICE";
 }
