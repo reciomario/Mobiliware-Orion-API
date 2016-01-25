@@ -8,8 +8,8 @@ public interface Constants {
 	 public static final String AUTH_URL= "https://cosmos.lab.fiware.org:13000/cosmos-auth/v1/token";
 	 
 	 //CREDENTIALS
-	 public static final String OAUTH_USER_NAME = "mario.recio@treelogic.com";
-	 public static final String OAUTH_USER_PASS = "tr33logic";
+	 public static final String OAUTH_USER_NAME = "email@email";
+	 public static final String OAUTH_USER_PASS = "pass";
 	 
 	 //MOBILIWARE API URLs
 	 public static final String MOBILIWARE_API_IP = "http://130.206.112.180";
