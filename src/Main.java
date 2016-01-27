@@ -36,8 +36,12 @@ public class Main {
 		Tests test = new Tests(Constants.OAUTH_USER_NAME, Constants.OAUTH_USER_PASS);
 		test.runOauthTests();      	//testing Oauth (This tests are required for the rest of tests)
 		
-		test.runTaxiTests();		//testing Taxi
 		
+		test.runTaxiTests();			//testing Taxi
+		test.runTaxiDesTests();			//testing Taxi_Desc
+		test.runRequestStepsTests(); 	//Testing Request Step
+		test.runRequestTests();			//testing Request
+
 		
 
 	}

@@ -81,10 +81,10 @@ public class Taxi_Desc{
 	//		Useful in those cases where the system is working with the whole object
 	//2) Static method .delete(token, ID) with no object defined
 	//		Useful in cases where the system only knows the ID. No "Object" defined is required
-	public boolean deleteTaxiDesc(String authToken) throws IOException{
-		return deleteTaxiDesc(authToken, this.getTd_id());
+	public boolean delete(String authToken) throws IOException{
+		return delete(authToken, this.getTd_id());
 	}
-	public static boolean deleteTaxiDesc(String authToken, String taxiDesc_id) throws IOException{
+	public static boolean delete(String authToken, String taxiDesc_id) throws IOException{
 		String response = Sender.send(authToken, Constants.CONTEXT_API_URL + taxiDesc_id,"DELETE");
 		//Analyze response code to check problems
 		ObjectMapper mapper = new ObjectMapper();
@@ -99,7 +99,7 @@ public class Taxi_Desc{
 	
 	public String toJson(){
 		return ("{\"contextElements\": [" + 
-			        "{\"type\": \"Taxi_position\","+
+			        "{\"type\": \"Taxi_Desc\","+
 			            "\"isPattern\": \"false\","+
 			            "\"id\": \"" + getTd_id() + "\","+
 			            "\"attributes\": ["+

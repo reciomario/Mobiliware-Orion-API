@@ -88,10 +88,10 @@ public class Taxi {
 	//		Useful in those cases where the system is working with the whole object
 	//2) Static method .delete(token, ID) with no object defined
 	//		Useful in cases where the system only knows the ID. No "Object" defined is required
-	public boolean deleteTaxi(String authToken) throws IOException{
-		return deleteTaxi(authToken, this.getTa_id());
+	public boolean delete(String authToken) throws IOException{
+		return delete(authToken, this.getTa_id());
 	}
-	public static boolean deleteTaxi(String authToken, String taxi_id) throws IOException{
+	public static boolean delete(String authToken, String taxi_id) throws IOException{
 		String response = Sender.send(authToken, Constants.CONTEXT_API_URL + taxi_id,"DELETE");
 		//Analyze response code to check problems
 		ObjectMapper mapper = new ObjectMapper();
