@@ -28,6 +28,15 @@ public class Passenger {
 		
 	}
 	
+	//CREATE A NEW PASSENGER IN THE CLOUD
+	public boolean upload(String authToken) throws IOException{
+		String response = Sender.send(authToken, Constants.UPLOAD_API_URL,"POST", this.toJson());
+		//Analyze response code to check problems
+		ObjectMapper mapper = new ObjectMapper();
+		UpdateResponse updateResponse = mapper.readValue(response, UpdateResponse.class);
+		if (updateResponse.contextResponses[0].statusCode.code.equals("200")) return true;
+		return false;	
+	}
 	
 	//GET A PASSSENGER GIVEN AN ID
 	public boolean get(String authToken, String id) 
@@ -76,7 +85,7 @@ public class Passenger {
 	return ("{\"contextElements\": [" + 
 		        "{\"type\": \"Passenger\","+
 		            "\"isPattern\": \"false\","+
-		            "\"id\": \"P" + getPa_id() + "\","+
+		            "\"id\": \"" + getPa_id() + "\","+
 		            "\"attributes\": ["+
 		                "{\"name\": \"pa_max_price\","+
 		                    "\"type\": \"float\","+
@@ -84,6 +93,8 @@ public class Passenger {
 		            "\"updateAction\": \"APPEND\"}");
 		
 	}
+
+
 
 	
 }

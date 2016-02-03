@@ -15,17 +15,19 @@ import entities.Entity.ContextElement.Attribute;
 public class Request_Step {
 
 	String rs_id;   	//RXXXXXSXXX
+	String ta_id;
 	String rs_startWaypointId;
 	String rs_startTime;
 	String rs_endWaypointId;
 	String rs_endTime;
 	String rs_totalTime;
 	
-	public Request_Step(String rs_id, String rs_startWaypointId, String rs_startTime, 
+	public Request_Step(String rs_id, String ta_id, String rs_startWaypointId, String rs_startTime, 
 			String rs_endWaypoint, String rs_endTime,
 			String rs_totalTime){
 		
 		setRs_endTime(rs_endTime);
+		setTa_id(ta_id);
 		setRs_endWaypointId(rs_endWaypoint);
 		setRs_id(rs_id);
 		setRs_startTime(rs_startTime);
@@ -66,6 +68,7 @@ public class Request_Step {
 				else if(attributes[i].name.equals("rs_endWaypointId")) this.setRs_endWaypointId(attributes[i].value);
 				else if(attributes[i].name.equals("rs_endTime")) this.setRs_endTime(attributes[i].value);
 				else if(attributes[i].name.equals("rs_totalTime")) this.setRs_totalTime(attributes[i].value);	
+				else if(attributes[i].name.equals("ta_id")) this.setTa_id(attributes[i].value);	
 			}
 
 			return true;
@@ -103,6 +106,11 @@ public class Request_Step {
 			            "\"isPattern\": \"false\","+
 			            "\"id\": \"" + getRs_id() + "\","+
 			            "\"attributes\": ["+
+			            
+								"{\"name\": \"ta_id\","+
+								"\"type\": \"text\","+
+								"\"value\": \"" + getTa_id() + "\"}," +
+
 			            		"{\"name\": \"rs_startWaypointId\","+
 			                    "\"type\": \"text\","+
 			                    "\"value\": \"" + getRs_startWaypointId() + "\"}," +
@@ -180,6 +188,14 @@ public class Request_Step {
 	}
 	public void setRs_totalTime(String rs_totalTime) {
 		this.rs_totalTime = rs_totalTime;
+	}
+
+	public String getTa_id() {
+		return ta_id;
+	}
+
+	public void setTa_id(String ta_id) {
+		this.ta_id = ta_id;
 	}
 
 }

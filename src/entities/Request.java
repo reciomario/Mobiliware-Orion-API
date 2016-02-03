@@ -19,6 +19,7 @@ import entities.Entity.ContextElement.Attribute;
 public class Request {
 
 	String re_id;		//RXXXXX
+	String pa_id;
 	String re_startWaypointId;
 	String re_startTime;
 	String re_endWaypointId;
@@ -31,7 +32,7 @@ public class Request {
 	List<Request_Step> re_requestSteps = new ArrayList<Request_Step>();
 
 	
-	public Request(String re_id, String re_startWaypointId, String re_startTime, 
+	public Request(String re_id, String pa_id, String re_startWaypointId, String re_startTime, 
 			String re_endWaypoint, String re_endTime,
 			String re_totalTime, String re_totalCost, 
 			String re_numSteps, String re_state, List<Request_Step> re_requestSteps){
@@ -45,6 +46,7 @@ public class Request {
 		setRe_state(re_state);
 		setRe_totalCost(re_totalCost);
 		setRe_totalTime(re_totalTime);
+		setPa_id(pa_id);
 		
 		setRe_requestSteps(re_requestSteps);
 	}
@@ -91,6 +93,7 @@ public class Request {
 				else if(attributes[i].name.equals("re_totalCost")) this.setRe_totalCost(attributes[i].value);	
 				else if(attributes[i].name.equals("re_numSteps")) this.setRe_numSteps(attributes[i].value);	
 				else if(attributes[i].name.equals("re_state")) this.setRe_state(attributes[i].value);	
+				else if(attributes[i].name.equals("pa_id")) this.setPa_id(attributes[i].value);	
 			}
 			
 			//Get Request_Step s Info
@@ -135,6 +138,10 @@ public class Request {
 			            		"{\"name\": \"re_startWaypointId\","+
 			                    "\"type\": \"text\","+
 			                    "\"value\": \"" + getRe_startWaypointId() + "\"}," +
+			                    
+								"{\"name\": \"pa_id\","+
+								"\"type\": \"text\","+
+								"\"value\": \"" + getPa_id() + "\"}," +
 			                    
 								"{\"name\": \"re_startTime\","+
 								"\"type\": \"text\","+
@@ -270,6 +277,14 @@ public class Request {
 
 	public void setRe_requestSteps(List<Request_Step> re_requestSteps) {
 		this.re_requestSteps = re_requestSteps;
+	}
+
+	public String getPa_id() {
+		return pa_id;
+	}
+
+	public void setPa_id(String pa_id) {
+		this.pa_id = pa_id;
 	}
 
 	
