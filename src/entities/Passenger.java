@@ -15,12 +15,12 @@ import entities.Entity.ContextElement.Attribute;
 public class Passenger {
 	
 	String pa_id;
-	String pa_max_price;
+	String pa_email;
 
-	public Passenger(String pa_id, String pa_max_price) {
+	public Passenger(String pa_id, String pa_email) {
 		
 		setPa_id(pa_id);
-		setPa_max_price(pa_max_price);
+		setPa_email(pa_email);
 
 	}
 
@@ -52,7 +52,7 @@ public class Passenger {
 			this.setPa_id(entity.contextElement.id);
 			Attribute[] attributes = entity.contextElement.attributes;
 			for(int i=0; i<attributes.length; i++){
-				if(attributes[i].name.equals("pa_max_price")) this.setPa_max_price(attributes[i].value);		
+				if(attributes[i].name.equals("pa_email")) this.setPa_email(attributes[i].value);		
 			}
 
 			return true;
@@ -72,12 +72,12 @@ public class Passenger {
 		this.pa_id = pa_id;
 	}
 
-	public String getPa_max_price() {
-		return pa_max_price;
+	public String getPa_email() {
+		return pa_email;
 	}
 
-	public void setPa_max_price(String pa_max_price) {
-		this.pa_max_price = pa_max_price;
+	public void setPa_email(String pa_email) {
+		this.pa_email = pa_email;
 	}
 
 	
@@ -87,9 +87,9 @@ public class Passenger {
 		            "\"isPattern\": \"false\","+
 		            "\"id\": \"" + getPa_id() + "\","+
 		            "\"attributes\": ["+
-		                "{\"name\": \"pa_max_price\","+
-		                    "\"type\": \"float\","+
-		                    "\"value\": \"" + getPa_max_price() + "\"}]}]," +
+		                "{\"name\": \"pa_email\","+
+		                    "\"type\": \"text\","+
+		                    "\"value\": \"" + getPa_email() + "\"}]}]," +
 		            "\"updateAction\": \"APPEND\"}");
 		
 	}

@@ -251,7 +251,7 @@ public class Tests {
 		//UPLOAD
 		System.out.println("PASSENGGER TEST: Upload a Passenger(ID=" + passengerIdExample + ")");
 		Passenger passengerTest = new Passenger(passengerIdExample,
-				"300");
+				"examplemail@example.com");
 		if(passengerTest.upload(token.getAccess_token())) System.out.println("Result: OK");
 		else System.out.println("Result: ERROR");
 
@@ -263,7 +263,7 @@ public class Tests {
 			System.out.println("Result: OK");
 			System.out.println("\t Obtained Passenger information");
 			System.out.println("\t ID = " + passengerGet.getPa_id());
-			System.out.println("\t Max Price = " +  passengerGet.getPa_max_price());
+			System.out.println("\t Email = " +  passengerGet.getPa_email());
 			
 		} else System.out.println("Result: ERROR");
 
