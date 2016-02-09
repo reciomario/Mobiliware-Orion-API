@@ -69,14 +69,14 @@ public class Tests {
 			
 		} else System.out.println("Result: ERROR");
 
-//		//DELETE
-//		System.out.println("\nTAXI TEST: Delete a taxi by ID (ID=" + taxiIdExample + ")");
-//		if(Taxi.delete(token.getAccess_token(), taxiIdExample)) {
-//			System.out.println("Result: OK");
-//			System.out.println("\t Deleted taxi ID:" + taxiGet.getTa_id());
-//		}
-//		else
-//			 System.out.println("Result: ERROR");
+		//DELETE
+		System.out.println("\nTAXI TEST: Delete a taxi by ID (ID=" + taxiIdExample + ")");
+		if(Taxi.delete(token.getAccess_token(), taxiIdExample)) {
+			System.out.println("Result: OK");
+			System.out.println("\t Deleted taxi ID:" + taxiGet.getTa_id());
+		}
+		else
+			 System.out.println("Result: ERROR");
 		
 
 
@@ -110,14 +110,14 @@ public class Tests {
 			
 		} else System.out.println("Result: ERROR");
 
-//		//DELETE
-//		System.out.println("\nTAXI DESCRIPTION TEST: Delete a taxi description by ID (ID=" + taxiDescIdExample + ")");
-//		if(Taxi.delete(token.getAccess_token(), taxiDescIdExample)) {
-//			System.out.println("Result: OK");
-//			System.out.println("\t Deleted taxi Description ID:" + taxiDescGet.getTd_id());
-//		}
-//		else
-//			 System.out.println("Result: ERROR");
+		//DELETE
+		System.out.println("\nTAXI DESCRIPTION TEST: Delete a taxi description by ID (ID=" + taxiDescIdExample + ")");
+		if(Taxi.delete(token.getAccess_token(), taxiDescIdExample)) {
+			System.out.println("Result: OK");
+			System.out.println("\t Deleted taxi Description ID:" + taxiDescGet.getTd_id());
+		}
+		else
+			 System.out.println("Result: ERROR");
 	}
 
 	//Request_Step Tests
@@ -151,14 +151,14 @@ public class Tests {
 			
 		} else System.out.println("Result: ERROR");
 
-//		//DELETE
-//		System.out.println("\nREQUEST STEP TEST: Delete a Request Step by ID (ID=" + requestStepIdExample + ")");
-//		if(Request.delete(token.getAccess_token(), requestStepIdExample)) {
-//			System.out.println("Result: OK");
-//			System.out.println("\t Deleted Request ID:" + requestStepGet.getRs_id());
-//		}
-//		else
-//			 System.out.println("Result: ERROR");
+		//DELETE
+		System.out.println("\nREQUEST STEP TEST: Delete a Request Step by ID (ID=" + requestStepIdExample + ")");
+		if(Request.delete(token.getAccess_token(), requestStepIdExample)) {
+			System.out.println("Result: OK");
+			System.out.println("\t Deleted Request ID:" + requestStepGet.getRs_id());
+		}
+		else
+			 System.out.println("Result: ERROR");
 		
 	}
 		
@@ -224,14 +224,14 @@ public class Tests {
 			
 		} else System.out.println("Result: ERROR");
 
-//		//DELETE
-//		System.out.println("\nREQUEST TEST: Delete a Request by ID (ID=" + requestIdExample + ")");
-//		if(Request.delete(token.getAccess_token(), requestIdExample)) {
-//			System.out.println("Result: OK");
-//			System.out.println("\t Deleted Request ID:" + requestGet.getRe_id());
-//		}
-//		else
-//			 System.out.println("Result: ERROR");
+		//DELETE
+		System.out.println("\nREQUEST TEST: Delete a Request by ID (ID=" + requestIdExample + ")");
+		if(Request.delete(token.getAccess_token(), requestIdExample)) {
+			System.out.println("Result: OK");
+			System.out.println("\t Deleted Request ID:" + requestGet.getRe_id());
+		}
+		else
+			 System.out.println("Result: ERROR");
 		
 	}
 	
@@ -267,14 +267,14 @@ public class Tests {
 			
 		} else System.out.println("Result: ERROR");
 
-//			//DELETE
-//			System.out.println("\nPASSENGER TEST: Delete a Passenger by ID (ID=" + passengerIdExample + ")");
-//			if(Request.delete(token.getAccess_token(), passengerIdExample)) {
-//				System.out.println("Result: OK");
-//				System.out.println("\t Deleted Passenger ID:" + passengerGet.getPa_id());
-//			}
-//			else
-//				 System.out.println("Result: ERROR");
+			//DELETE
+			System.out.println("\nPASSENGER TEST: Delete a Passenger by ID (ID=" + passengerIdExample + ")");
+			if(Request.delete(token.getAccess_token(), passengerIdExample)) {
+				System.out.println("Result: OK");
+				System.out.println("\t Deleted Passenger ID:" + passengerGet.getPa_id());
+			}
+			else
+				 System.out.println("Result: ERROR");
 		
 	}
 
@@ -306,15 +306,15 @@ public class Tests {
 			
 		} else System.out.println("Result: ERROR");
 
-//		//DELETE
-//		System.out.println("\nWaypoint TEST: Delete a Waypoint by ID (ID=" + waypointIdExample + ")");
-//		if(Request.delete(token.getAccess_token(), waypointIdExample)) {
-//			System.out.println("Result: OK");
-//			System.out.println("\t Deleted Waypoint ID:" + waypointIdExample);
-//		}
-//		else
-//			 System.out.println("Result: ERROR");
-//		
+		//DELETE
+		System.out.println("\nWaypoint TEST: Delete a Waypoint by ID (ID=" + waypointIdExample + ")");
+		if(Request.delete(token.getAccess_token(), waypointIdExample)) {
+			System.out.println("Result: OK");
+			System.out.println("\t Deleted Waypoint ID:" + waypointIdExample);
+		}
+		else
+			 System.out.println("Result: ERROR");
+		
 	}
 			
 	
