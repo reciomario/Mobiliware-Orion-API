@@ -31,13 +31,16 @@ public class Tests {
 	//Oauth Tests
 	public void runOauthTests() throws IOException{
 		System.out.println("------OAUTH TESTS------");
+		System.out.println("Idm: " + Constants.AUTH_URL);
 		//CREATE USER
 		System.out.println("OAUTH TEST: Create user");
 		User usuario = new User(user, pass);
+		System.out.println("Result: OK");
 		
 		//GET FIWARE TOKEN
 		System.out.println("OAUTH TEST: Request token");
 		this.token = usuario.getSessionToken();
+		System.out.println("Result: OK");
 		
 	}
 	
@@ -69,14 +72,14 @@ public class Tests {
 			
 		} else System.out.println("Result: ERROR");
 
-		//DELETE
-		System.out.println("\nTAXI TEST: Delete a taxi by ID (ID=" + taxiIdExample + ")");
-		if(Taxi.delete(token.getAccess_token(), taxiIdExample)) {
-			System.out.println("Result: OK");
-			System.out.println("\t Deleted taxi ID:" + taxiGet.getTa_id());
-		}
-		else
-			 System.out.println("Result: ERROR");
+//		//DELETE
+//		System.out.println("\nTAXI TEST: Delete a taxi by ID (ID=" + taxiIdExample + ")");
+//		if(Taxi.delete(token.getAccess_token(), taxiIdExample)) {
+//			System.out.println("Result: OK");
+//			System.out.println("\t Deleted taxi ID:" + taxiGet.getTa_id());
+//		}
+//		else
+//			 System.out.println("Result: ERROR");
 		
 
 
@@ -110,14 +113,14 @@ public class Tests {
 			
 		} else System.out.println("Result: ERROR");
 
-		//DELETE
-		System.out.println("\nTAXI DESCRIPTION TEST: Delete a taxi description by ID (ID=" + taxiDescIdExample + ")");
-		if(Taxi.delete(token.getAccess_token(), taxiDescIdExample)) {
-			System.out.println("Result: OK");
-			System.out.println("\t Deleted taxi Description ID:" + taxiDescGet.getTd_id());
-		}
-		else
-			 System.out.println("Result: ERROR");
+//		//DELETE
+//		System.out.println("\nTAXI DESCRIPTION TEST: Delete a taxi description by ID (ID=" + taxiDescIdExample + ")");
+//		if(Taxi.delete(token.getAccess_token(), taxiDescIdExample)) {
+//			System.out.println("Result: OK");
+//			System.out.println("\t Deleted taxi Description ID:" + taxiDescGet.getTd_id());
+//		}
+//		else
+//			 System.out.println("Result: ERROR");
 	}
 
 	//Request_Step Tests
@@ -151,14 +154,14 @@ public class Tests {
 			
 		} else System.out.println("Result: ERROR");
 
-		//DELETE
-		System.out.println("\nREQUEST STEP TEST: Delete a Request Step by ID (ID=" + requestStepIdExample + ")");
-		if(Request.delete(token.getAccess_token(), requestStepIdExample)) {
-			System.out.println("Result: OK");
-			System.out.println("\t Deleted Request ID:" + requestStepGet.getRs_id());
-		}
-		else
-			 System.out.println("Result: ERROR");
+//		//DELETE
+//		System.out.println("\nREQUEST STEP TEST: Delete a Request Step by ID (ID=" + requestStepIdExample + ")");
+//		if(Request.delete(token.getAccess_token(), requestStepIdExample)) {
+//			System.out.println("Result: OK");
+//			System.out.println("\t Deleted Request ID:" + requestStepGet.getRs_id());
+//		}
+//		else
+//			 System.out.println("Result: ERROR");
 		
 	}
 		
@@ -224,14 +227,14 @@ public class Tests {
 			
 		} else System.out.println("Result: ERROR");
 
-		//DELETE
-		System.out.println("\nREQUEST TEST: Delete a Request by ID (ID=" + requestIdExample + ")");
-		if(Request.delete(token.getAccess_token(), requestIdExample)) {
-			System.out.println("Result: OK");
-			System.out.println("\t Deleted Request ID:" + requestGet.getRe_id());
-		}
-		else
-			 System.out.println("Result: ERROR");
+//		//DELETE
+//		System.out.println("\nREQUEST TEST: Delete a Request by ID (ID=" + requestIdExample + ")");
+//		if(Request.delete(token.getAccess_token(), requestIdExample)) {
+//			System.out.println("Result: OK");
+//			System.out.println("\t Deleted Request ID:" + requestGet.getRe_id());
+//		}
+//		else
+//			 System.out.println("Result: ERROR");
 		
 	}
 	
@@ -267,14 +270,14 @@ public class Tests {
 			
 		} else System.out.println("Result: ERROR");
 
-			//DELETE
-			System.out.println("\nPASSENGER TEST: Delete a Passenger by ID (ID=" + passengerIdExample + ")");
-			if(Request.delete(token.getAccess_token(), passengerIdExample)) {
-				System.out.println("Result: OK");
-				System.out.println("\t Deleted Passenger ID:" + passengerGet.getPa_id());
-			}
-			else
-				 System.out.println("Result: ERROR");
+//			//DELETE
+//			System.out.println("\nPASSENGER TEST: Delete a Passenger by ID (ID=" + passengerIdExample + ")");
+//			if(Request.delete(token.getAccess_token(), passengerIdExample)) {
+//				System.out.println("Result: OK");
+//				System.out.println("\t Deleted Passenger ID:" + passengerGet.getPa_id());
+//			}
+//			else
+//				 System.out.println("Result: ERROR");
 		
 	}
 
@@ -306,14 +309,209 @@ public class Tests {
 			
 		} else System.out.println("Result: ERROR");
 
-		//DELETE
-		System.out.println("\nWaypoint TEST: Delete a Waypoint by ID (ID=" + waypointIdExample + ")");
-		if(Request.delete(token.getAccess_token(), waypointIdExample)) {
-			System.out.println("Result: OK");
-			System.out.println("\t Deleted Waypoint ID:" + waypointIdExample);
+//		//DELETE
+//		System.out.println("\nWaypoint TEST: Delete a Waypoint by ID (ID=" + waypointIdExample + ")");
+//		if(Request.delete(token.getAccess_token(), waypointIdExample)) {
+//			System.out.println("Result: OK");
+//			System.out.println("\t Deleted Waypoint ID:" + waypointIdExample);
+//		}
+//		else
+//			 System.out.println("Result: ERROR");
+		
+	}
+
+	
+	
+	
+	//Load fake data in the Management web application
+	public void loadFakeData() throws IOException {
+		//Info Taxis
+		String[] ids = {"T00001",
+				"T00002",
+				"T00003",
+				"T00004",
+				"T00005",
+				"T00006",
+				"T00007",
+				"T00008",
+				"T00009",
+				"T00010"};
+		String[] longs = {"-5.8447600",
+				"-5.8496600",
+				"-5.8481600",
+				"-5.8471600",
+				"-5.8462600",
+				"-5.8453600",
+				"-5.8449600",
+				"-5.8330600",
+				"-5.8429800",
+				"-5.8413800"};
+		String[] lats = {"43.3622900",
+				"43.3602900",
+				"43.3692900",
+				"43.3612900",
+				"43.3622900",
+				"43.3682900",
+				"43.3602900",
+				"43.3602900",
+				"43.3632900",
+				"43.3632900"};
+		String[] speed = {"10",
+				"40",
+				"23",
+				"12",
+				"9",
+				"80",
+				"53",
+				"0",
+				"0",
+				"35"};
+		String[] state = {"AVAILABLE",
+				"AVAILABLE",
+				"OCCUPIED",
+				"OCCUPIED",
+				"AVAILABLE",
+				"OUTOFSERVICE",
+				"AVAILABLE",
+				"OCCUPIED",
+				"AVAILABLE",
+				"OCCUPIED"};
+		String[] date = {"01/01/16",
+				"01/01/16",
+				"01/02/16",
+				"01/01/16",
+				"01/01/16",
+				"01/01/16",
+				"01/02/16",
+				"01/01/16",
+				"01/01/16",
+				"01/02/16"};
+		for(int i=0; i<10; i++)
+		{
+			Taxi taxi = new Taxi(ids[i], "12/12/12", longs[i] ,lats[i] ,speed[i],
+					state[i]);
+			taxi.upload(token.getAccess_token());
 		}
-		else
-			 System.out.println("Result: ERROR");
+		
+		
+		
+		//Info Requests
+		String[] idsr = {"R00001",
+				"R00002",
+				"R00003",
+				"R00004",
+				"R00005",
+				"R00006",
+				"R00007",
+				"R00008",
+				"R00009",
+				"R00010"};
+		String[] pid = {"P00001",
+				"P00002",
+				"P00003",
+				"P00004",
+				"P00005",
+				"P00006",
+				"P00007",
+				"P00008",
+				"P00009",
+				"P00010"};
+		String[] swid = {"W00001",
+				"W00002",
+				"W00003",
+				"W00004",
+				"W00005",
+				"W00006",
+				"W00007",
+				"W00008",
+				"W00009",
+				"W00010",
+				"W00011",
+				"W00012",
+				"W00013",
+				"W00014",
+				"W00015",
+				"W00016",
+				"W00017",
+				"W00018",
+				"W00019",
+				"W00020",
+				"W00021",
+				"W00022",
+				"W00023",
+				"W00024",
+				"W00025",
+				"W00026",
+				"W00027",
+				"W00028",
+				"W00029",
+				"W00030",
+				"W00031",
+				"W00032",
+				"W00033",
+				"W00034",
+				"W00035",
+				"W00036",
+				"W00037",
+				"W00038",
+				"W00039",
+				"W00040"};
+		String[] stater = {"PLANNED",
+				"FINISHED",
+				"PLANNED",
+				"FINISHED",
+				"ACTIVE",
+				"PLANNED",
+				"CANCELLED",
+				"ACTIVE",
+				"PLANNED",
+				"ACTIVE"};
+		
+		String[] stime = {"2016/01/30 11:59:59",
+				"2016/01/30 12:29:59",
+				"2016/01/30 11:23:59",
+				"2016/01/30 09:56:59",
+				"2016/01/30 05:12:59",
+				"2016/01/30 23:34:59",
+				"2016/01/30 23:31:59",
+				"2016/01/30 04:01:59",
+				"2016/01/30 11:34:59",
+				"2016/01/30 11:23:59"};
+		//Request_Steps Array creation
+		List<Request_Step> requestStepTest = new ArrayList<Request_Step>();
+		requestStepTest.add(new Request_Step("W00001" + "S000",
+				"T00001",
+				"W00001", "2016/01/30 11:59:59", 
+				"W00002", "2016/01/30 12:59:59", "20"));
+		requestStepTest.add(new Request_Step("W00001" + "S001",
+				"T00001",
+				"W00002", "2016/01/30 12:19:59", 
+				"W00003", "2016/01/30 12:49:59", "30"));
+		requestStepTest.add(new Request_Step("W00001" + "S002",
+				"T00001",
+				"W00003", "2016/01/30 12:49:59", 
+				"W00004", "2016/01/30 12:59:59", "10"));
+		for(int i=0; i<10; i++)
+		{
+			Request request = new Request(idsr[i],pid[i],swid[i],stime[i],swid[i+10],"2016/01/30 12:29:59",
+					"23", "12", "3", stater[i],requestStepTest);
+			request.upload(token.getAccess_token());
+		}
+		
+		
+		// Info Waypoints
+		for (int i = 0; i< 40; i++){
+			//delete
+//			Waypoint waypoint = new Waypoint();
+//			waypoint.delete(token.getAccess_token(), swid[i]);
+			
+			int numLine = (int) Math.floor(Math.random()*6+1);
+			int longitude = (int) Math.floor(Math.random()*26+32); 
+			int latitute = (int) Math.floor(Math.random()*11+58);
+			Waypoint waypoint = new Waypoint(swid[i],"ExampleWaypoint_" 
+			+ i,"-5.8"+longitude+"1600", "43.3"+ latitute+"2900", numLine+"");
+			waypoint.upload(token.getAccess_token());
+		}
 		
 	}
 			

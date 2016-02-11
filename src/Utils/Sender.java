@@ -39,7 +39,7 @@ public class Sender {
 		con.setRequestProperty("User-Agent", "Mozilla/4.0 (compatible; MSIE 5.0;Windows98;DigExt)"); 
 		con.setDoOutput(true); 
 		con.setDoInput(true); 
-		System.out.println(authUrl);
+		if(Constants.DEBUG) System.out.println(authUrl);
 		DataOutputStream output = new DataOutputStream(con.getOutputStream());  
 		output.writeBytes(query);
 		output.close();

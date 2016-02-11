@@ -41,13 +41,13 @@ public class Main {
 		test.runTaxiDesTests();			//testing Taxi_Desc
 		test.runRequestStepsTests(); 	//Testing Request Step
 		test.runRequestTests();			//testing Request
-		
 		test.runPassengerTests();		//testing Passenger
 		test.runWaypointsTests();		//testing Waypoints
-
+		
+//		test.loadFakeData();			//testing Management Application Web
 		
 
-		
+	
 
 	}
 
